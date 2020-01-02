@@ -23,4 +23,11 @@ pip install keras
 //with pip3
 pip3 install keras
 ```
-
+## Operation of the Script
+The 'keras_model.h5' file and 'Traffic.py' files have to be in the same directory. Once in the directory run the command:
+```
+//python
+python Traffic.py
+//python3
+python3 Traffic.py
+```
