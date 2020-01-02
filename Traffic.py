@@ -4,10 +4,6 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras import models
 
-#Defining Host and Port
-HOST = 'localhost'
-PORT = '4567'
-
 #Loading lists HIGH and LOW
 HIGH = []
 LOW = []
