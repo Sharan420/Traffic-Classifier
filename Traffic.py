@@ -9,7 +9,7 @@ HIGH = []
 LOW = []
 
 #Loading the model
-model = models.load_model('/Users/sharansuri/Desktop/IMAGE/keras_model.h5')
+model = models.load_model('keras_model.h5')
 #Initialising The webcam
 video = cv2.VideoCapture(0)
 
