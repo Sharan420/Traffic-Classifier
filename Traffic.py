@@ -4,6 +4,21 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras import models
 
+<<<<<<< HEAD
+=======
+#Creating the socket object
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print("Socket successfully created")
+
+# get local machine name
+host = socket.gethostname()
+
+port = 4345
+
+# connection to hostname on the port.
+s.connect((host, port))
+
+>>>>>>> Dev
 #Loading lists HIGH and LOW
 HIGH = []
 LOW = []
@@ -61,3 +76,6 @@ LOW_av = LOW_av/100
 
 #Printing the average values
 print('HIGH%: ',HIGH_av,'LOW%: ',LOW_av)
+
+s.send(str(HIGH_av).encode('ascii'))
+s.close()
