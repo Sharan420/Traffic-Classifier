@@ -4,16 +4,24 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras import models
 
-#Defining Host and Port
-HOST = 'localhost'
-PORT = '4567'
+#Creating the socket object
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print("Socket successfully created")
+
+# get local machine name
+host = socket.gethostname()
+
+port = 4345
+
+# connection to hostname on the port.
+s.connect((host, port))
 
 #Loading lists HIGH and LOW
 HIGH = []
 LOW = []
 
 #Loading the model
-model = models.load_model('/Users/sharansuri/Desktop/IMAGE/keras_model.h5')
+model = models.load_model('keras_model.h5')
 #Initialising The webcam
 video = cv2.VideoCapture(0)
 
@@ -65,3 +73,6 @@ LOW_av = LOW_av/100
 
 #Printing the average values
 print('HIGH%: ',HIGH_av,'LOW%: ',LOW_av)
+
+s.send(str(HIGH_av).encode('ascii'))
+s.close()
