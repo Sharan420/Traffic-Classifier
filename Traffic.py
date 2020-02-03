@@ -4,8 +4,6 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras import models
 
-<<<<<<< HEAD
-=======
 #Creating the socket object
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Socket successfully created")
@@ -18,7 +16,6 @@ port = 4345
 # connection to hostname on the port.
 s.connect((host, port))
 
->>>>>>> Dev
 #Loading lists HIGH and LOW
 HIGH = []
 LOW = []
