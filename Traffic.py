@@ -3,79 +3,100 @@ import socket
 import numpy as np
 from PIL import Image
 from tensorflow.keras import models
+import RPi.GPIO as gpio
+from time import sleep
 
-<<<<<<< HEAD
-=======
-#Creating the socket object
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Socket successfully created")
 
-# get local machine name
-host = socket.gethostname()
+host = "192.168.43.64"
 
 port = 4345
 
-# connection to hostname on the port.
-s.connect((host, port))
+gpio.setwarnings(False)
+gpio.setmode(gpio.BOARD)
+gpio.setup(40, gpio.OUT, initial=gpio.LOW)
+gpio.setup(38, gpio.OUT, initial=gpio.LOW)
+gpio.setup(36, gpio.OUT, initial=gpio.LOW)
 
->>>>>>> Dev
-#Loading lists HIGH and LOW
+def REDL(TME):
+    gpio.output(38, False)
+    gpio.output(36,False)
+    gpio.output(40, True)
+    sleep(TME)
+    gpio.output(40, False)
+def GRNL(TA):
+    gpio.output(40, False)
+    gpio.output(38,False)
+    gpio.output(36, True)
+    sleep(TA)
+def YWL():
+    gpio.output(40,False)
+    gpio.output(36,False)
+    gpio.output(38, True)
+    sleep(5)
+
 HIGH = []
 LOW = []
 
-#Loading the model
-model = models.load_model('keras_model.h5')
-#Initialising The webcam
-video = cv2.VideoCapture(0)
 
-for i in range(100):
-        _, frame = video.read()
+while True:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print("Socket successfully created")
+    s.connect((host, port))
+    model = models.load_model('keras_model.h5')
+    video = cv2.VideoCapture(0)
+    for i in range(10):
+            _, frame = video.read()
         
-        im = Image.fromarray(frame, 'RGB')
+            im = Image.fromarray(frame, 'RGB')
 
-        #Resizing the array
-        im = im.resize((224,224))
-        #Converting into Numpy array again
-        img_array = np.array(im)
+            im = im.resize((224,224))
+            img_array = np.array(im)
 
          
-        img_array = np.expand_dims(img_array, axis=0)
+            img_array = np.expand_dims(img_array, axis=0)
 
-        #Calling the predict() function 
-        prediction = model.predict(img_array)[0][0]
-        pper = prediction * 100
-        HIGH.append(pper)
-        prediction2 = model.predict(img_array)[0][1]
-        pper2 = prediction2 * 100
-        LOW.append(pper2) 
+            prediction = model.predict(img_array)[0][0]
+            pper = prediction * 100
+            HIGH.append(pper)
+            prediction2 = model.predict(img_array)[0][1]
+            pper2 = prediction2 * 100
+            LOW.append(pper2) 
 
-       # Unncomment to see result to each run 
-       # print("HIGH: ",round(pper,2),"%","LOW: ",round(pper2,2),"%")
 
        
+    video.release()
+    cv2.destroyAllWindows()
 
-        cv2.imshow("Capturing", frame)
-        key=cv2.waitKey(1)
-        if key == ord('q'):
-                break
-video.release()
-cv2.destroyAllWindows()
+    HIGH_av = 0
+    LOW_av = 0
 
-#Initialising the variables which would contain the average values
-HIGH_av = 0
-LOW_av = 0
+    for j in range(0,len(HIGH)):
+        HIGH_av += HIGH[j]
+    for k in range(0,len(LOW)):
+        LOW_av += LOW[k]
 
-#Calculating the average value for HIGH prediction
-for j in range(0,len(HIGH)):
-    HIGH_av += HIGH[j]
-for k in range(0,len(LOW)):
-    LOW_av += LOW[k]
+    HIGH_av = HIGH_av/10
+    LOW_av = LOW_av/10
 
-HIGH_av = HIGH_av/100
-LOW_av = LOW_av/100
-
-#Printing the average values
-print('HIGH%: ',HIGH_av,'LOW%: ',LOW_av)
-
-s.send(str(HIGH_av).encode('ascii'))
-s.close()
+    print('HIGH%: ',HIGH_av,'LOW%: ',LOW_av)
+    bcd = [HIGH_av,LOW_av]
+    s.send(str(bcd).encode('ascii'))
+    msg = s.recv(1024)
+    al = msg.decode('ascii')
+    al = str(al)
+    s.close()
+    print(al)
+    
+    ti = 30
+    if al == 'RED':
+        ti += 15
+        YWL()
+        REDL(ti)
+    if al == 'GREEN':
+        YWL()
+        GRNL(ti-10)
+    HIGH_av = 0
+    LOW_av = 0
+    HIGH = []
+    LOW = []
