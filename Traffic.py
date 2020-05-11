@@ -3,6 +3,7 @@ import socket
 import numpy as np
 from PIL import Image
 from tensorflow.keras import models
+import matplotlib.pyplot as plt
 
 #Creating the socket object
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -73,6 +74,16 @@ LOW_av = LOW_av/100
 
 #Printing the average values
 print('HIGH%: ',HIGH_av,'LOW%: ',LOW_av)
+fig = plt.figure()
+#ax = fig.add_axes([0,0,1,1])
+ptage = ['LOW','HIGH']
+value = [LOW_av,HIGH_av]
+y_pos = np.arange(len(ptage))
+plt.bar(y_pos,value,align='center', alpha=0.5)
+plt.xlabel('categories')
+plt.ylabel('values')
+plt.xticks(y_pos, ptage)
+plt.show(block=True)
 
 s.send(str(HIGH_av).encode('ascii'))
 s.close()
