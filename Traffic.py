@@ -1,3 +1,10 @@
+# ======================================================
+# Thrown together by Sharan And Aditya
+# DO NOT PLAGARISE
+# DON'T
+# ======================================================
+
+
 import cv2
 import socket
 import numpy as np

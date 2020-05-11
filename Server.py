@@ -1,3 +1,8 @@
+# ======================================================
+# Thrown together by Sharan 
+# DO NOT PLAGARISE
+# DON'T
+# ======================================================
 import socket
 
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
