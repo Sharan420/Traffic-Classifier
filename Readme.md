@@ -38,6 +38,10 @@ pip install pillow
 #with pip3
 pip3 install pillow
 ```
+* Also install this dependency:
+```
+https://drive.google.com/drive/folders/1x-yedhLrt_aiSk3WrXl0FRTRVx7ww8_f
+```
 ## Operation of the Script
 The Server.py file has to be excuted first it can ran in the background using
 ```
