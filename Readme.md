@@ -1,5 +1,5 @@
 # Traffic Classifier: Server Branch
-Branch with server components.
+Branch with server components.Please also take some time to go through our PPT
 
 ## Installing Dependencies
 
@@ -40,7 +40,7 @@ pip3 install pillow
 ```
 * Also install this dependency:
 ```
-https://drive.google.com/drive/folders/1x-yedhLrt_aiSk3WrXl0FRTRVx7ww8_f
+https://drive.google.com/drive/folders/1x-yedhLrt_aiSk3WrXl0FRTRVx7ww8_f?usp=sharing
 ```
 ## Operation of the Script
 The Server.py file has to be excuted first it can ran in the background using
