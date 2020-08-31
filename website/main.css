@@ -123,7 +123,6 @@ a:hover {
     table-layout: fixed;
     transition: transform 1s ease-out;
     display: table;
-    display: none;
 }
 
 .loader-wheel {
