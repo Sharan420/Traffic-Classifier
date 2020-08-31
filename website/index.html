@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html>
+
+<team>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Website for TrafFix for MINETX 2020. (╯°□°）╯︵ ┻━┻">
+    <meta name="keywords" content="TrafFix, traffic, traffix">
+    <meta name="author" content="Naman Chandok, Sharan Suri, Aditya Kabu, Shaivi Shewaramani">
+    <title>TrafFix | Traffic Classifier</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Poiret+One&family=Raleway&display=swap&family=Bebas+Neue&family=Odibee+Sans&family=Abel&family=Staatliches&family=Poppins:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='main.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="lib/favicon.png" sizes="26x26" type="image/png">
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+</team>
+
+<body onload="myFunction()">
+    <div class="load" id="load">
+        <center>
+            <div class="loader-wheel">
+            </div>
+        </center>
+    </div>
+
+    <div class="mainbod" id="mainbod">
+
+        <!--- DARK MODE SWITCH --->
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round">
+                    <center>
+                        <img src="lib/sun.png" class="sun">
+                        <img src="lib/moon.png" class="moon">
+                    </center>
+                </div>
+            </label>
+        </div>
+
+        <!-- FULLPAGE -->
+
+        <div id="fullpage">
+
+            <div class="section" id="home">
+                <div class="row align-center">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="heading">
+                            <h1>TrafFix</h1>
+                            <h3>Traffic Classifier</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <!-- ABOUT -->
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3 align-center">
+                        <img src="lib/logo.png" class="logo-img">
+                    </div>
+                    <div class="col-md-5 align-right">
+                        <h1 class="section-title">TrafFix</h1>
+                        <br>
+                        <div class="section-hr right"></div>
+                        <br>
+                        <p class="section-text">
+                            We would install <b>cameras</b> and <b>raspberry pi's</b> on traffic signals which would
+                            capture a video
+                            stream and send it to our server which, with the <b>help of our AI bot</b> will calculate
+                            the
+                            traffic density on that street and then accordingly <b>generate an output</b> which will
+                            then be
+                            received by the raspberry pi which will <b>manipulate the traffic signal</b> on the basis of
+                            the
+                            instructions provided by the server.
+                        </p>
+                        <p class="section-text">
+                            We will also have a local version of the bot running as a <b>fallback</b> if the server goes
+                            offline or is under maintenance.
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 align-left">
+                        <h1 class="section-title">The Problem</h1>
+                        <br>
+                        <div class="section-hr left"></div>
+                        <br>
+                        <ol>
+                            <li class="section-text">
+                                In metropolitan cities we find that all traffic lights are <b>non adaptive</b> i.e
+                                run on
+                                <b>fixed timings</b> which are not affected by the <b>traffic density</b>.
+                            </li>
+                            <li class="section-text">
+                                The traffic lights will complete its <b>hard coded</b> cycle before changing the
+                                signal for
+                                the <b>progressive traffic</b>. Which wastes a lot of time and contributes to
+                                <b>global
+                                    warming</b> enormously.
+                            </li>
+                            <li class="section-text">
+                                Apart from the environmental concern, the traffic on roads results in delay for
+                                <b>ambulances</b>, <b>fire engines</b> and <b>police</b> to reach their destinations.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <img class="logo-img" src="lib/ai.png">
+                    </div>
+                    <div class="col-md-5 align-right">
+                        <h1 class="section-title">Implementation of AI</h1>
+                        <br>
+                        <div class="section-hr right"></div>
+                        <br>
+                        <p class="section-text">
+                            The video stream received from the camera is passed through our AI, then based on the
+                            traffic conditions of the road, it is classified into 2 major classes.
+                        </p>
+                        <p class="section-text">
+                            <b>High_Traffic</b> and <b>Low_Traffic</b> depending on this the new timings of the traffic
+                            light(s) are decided
+                        </p>
+                        <p class="section-text">
+                            We have used a <b>SLAM</b> model type for our AI
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 align-left">
+                        <h1 class="section-title">Our Solution</h1>
+                        <br>
+                        <div class="section-hr left"></div>
+                        <br>
+                        <p class="section-text">
+                            We plan to Introduce <b>self sufficient traffic system</b> infused with <b>AI</b>, <b>Deep
+                                ML</b> which will be integrated with a raspberry pi module fitted on each traffic light
+                            with an external connection to a <b>camera</b>.
+                        </p>
+                        <p class="section-text">
+                            The traffic <b>lights would alter</b> their duration on the basis of a pre-fed <b>algorithm
+                                in the raspberry pi module</b> which in turn will optimize the <b>availability of
+                                routes</b> and <b>reduce congestion</b>.
+                        </p>
+                        <p class="section-text">
+                            We will also have the <b>hard-coded</b> version in <b>idle state</b> so that the light
+                            doesn't <b>malfunction</b> in absence of electricity.
+                        </p>
+                        <p class="section-text">
+                            Most importantly it will lay down the <b>framework for a new system of traffic lights</b>,
+                            thus implementing <b>Atma-Nirbhar Bharat</b>.
+                        </p>
+                        <p class="section-text">
+                            Our model is infused with a <b>special mode</b> that creates a '<b>green-corridor</b>' for
+                            permitted vehicles which can be enabled via app.
+                        </p>
+                        <p class="section-text">
+                            We intend to run a <b>prediction model</b> so that we can predict the future traffic
+                            conditions and make our system more efficient.
+                        </p>
+                        <p class="section-text">
+                            Moreover, we also plan to <b>deploy an app</b> that can give the user average traffic
+                            conditions in their surroundings and optimize their routes accordingly assisting them with
+                            <b>ETAs and Shorter routes</b>.
+                        </p>
+                        <p class="section-text">
+                            We can expand our model to cover <b>intersections</b>, <b>T-points</b> and <b>express
+                                highways</b>.
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 align-center">
+                        <h1 class="section-title">How Does Our Prototype Work?</h1>
+                        <br>
+                        <center>
+                            <div class="section-hr"></div>
+                        </center>
+                        <br>
+                        <section class="container">
+                            <div class="container__flow">
+                                <h3>Video Stream from the Camera</h3>
+                            </div>
+                            <svg viewbox="0 0 10 100">
+                                <line x1="5" x2="5" y1="0" y2="100" />
+                            </svg>
+                            <div class="container__flow">
+                                <p>Open CV</p>
+                                <h3>Split Into Frames</h3>
+                            </div>
+                            <svg viewbox="0 0 10 100">
+                                <line x1="5" x2="5" y1="0" y2="100" />
+                            </svg>
+                            <div class="container__flow">
+                                <p>Keras</p>
+                                <h3>Processed By the AI Engine</h3>
+                            </div>
+                            <svg viewbox="0 0 10 100">
+                                <line x1="5" x2="5" y1="0" y2="100" />
+                            </svg>
+                            <p>Classification into High_Traffic and Low_Traffic.</p>
+                            <svg viewbox="0 0 10 100">
+                                <line x1="5" x2="5" y1="0" y2="100" />
+                            </svg>
+                            <div class="container__flow">
+                                <h3>Checks For Manual Control Request</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <svg viewbox="0 0 10 100">
+                                        <line x1="5" x2="5" y1="0" y2="100" />
+                                    </svg>
+                                    <div class="container__flow">
+                                        <p>If True</p>
+                                        <h3>Control Handed Over</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <svg viewbox="0 0 10 100">
+                                        <line x1="5" x2="5" y1="0" y2="100" />
+                                    </svg>
+                                    <div class="container__flow">
+                                        <p>If Not True</p>
+                                        <h3>Timings Calculated</h3>
+                                    </div>
+                                    <svg viewbox="0 0 10 100">
+                                        <line x1="5" x2="5" y1="0" y2="100" />
+                                    </svg>
+                                    <div class="container__flow">
+                                        <h3>State of the Traffic Light Changed</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 align-left">
+                        <h1 class="section-title">Hardware and Software Used</h1>
+                        <br>
+                        <div class="section-hr left"></div>
+                        <br>
+                        <p class="section-text">
+                            <b class="section-text">Hardware Used:</b>
+                            <ul>
+                                <li class="section-text">Raspberry Pi 3/0</li>
+                                <li class="section-text">A USB compatible Camera, preferably weather-proof</li>
+                            </ul>
+                            <b class="section-text">Software Details:</b>
+                            <ul>
+                                <li class="section-text">The scripts that have to be executed are written in python</li>
+                                <li class="section-text">The AI model is stored in a keras file.</li>
+                            </ul>
+                            <b class="section-text">Libraries Used:</b>
+                            <ul>
+                                <li class="section-text">Keras</li>
+                                <li class="section-text">OpenCV</li>
+                                <li class="section-text">PIL</li>
+                                <li class="section-text">NumPy</li>
+                                <li class="section-text">Socket</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row content">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 align-center">
+                        <h1 class="section-title">Our Team</h1>
+                        <br>
+                        <center>
+                            <div class="section-hr"></div>
+                        </center>
+                        <br>
+                        <p class="section-text">
+                            <center>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="team-info">
+                                            <img src="lib/chandok.jpeg" class="team-img">
+                                            <div class="team-text">
+                                                <h4>Naman Chandok</h4>
+                                                <hr class="teams-hr">
+                                                <p><i class="fal fa-envelope"></i> namanpyrotech@gmail.com<br><br></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="team-info">
+                                            <img src="lib/kabu.jpeg" class="team-img">
+                                            <div class="team-text">
+                                                <h4>Aditya Kabu</h4>
+                                                <hr class="teams-hr">
+                                                <p><i class="fal fa-envelope"></i> kabuaditya1@gmail.com<br><br></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="team-info">
+                                            <img src="lib/shewaramani.jpeg" class="team-img">
+                                            <div class="team-text">
+                                                <h4>Shaivi Shewaramani</h4>
+                                                <hr class="teams-hr">
+                                                <p><i class="fal fa-envelope"></i> shaivipyrotech@gmail.com<br><br></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="team-info">
+                                            <img src="lib/suri.jpeg" class="team-img">
+                                            <div class="team-text">
+                                                <h4>Sharan Suri</h4>
+                                                <hr class="teams-hr">
+                                                <p><i class="fal fa-envelope"></i> sharansuri1980@gmail.com<br><br></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+
+            <div class="section fp-auto-height" id="footer">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 align-left">
+                        <h1 class="section-title">TrafFix</h1>
+                        <p class="section-text">
+                            <a href="https://github.com/NamanChandok/Traffic-Classifier" class="social-links"
+                                target="_blank"><i class="fab fa-github"></i></a>
+                            <small>&copy; 2020 TrafFix | Traffic Classifier</small>
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="fontawesome.js"></script>
+    <script type="text/javascript" src="fullpage.js"></script>
+    <script type="text/javascript" src="scrolloverflow.js"></script>
+    <script type="text/javascript">
+        // FULLPAGE
+
+        var myFullpage = new fullpage('#fullpage', {
+            navigation: true,
+            scrollOverflow: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['Home', 'About TrafFix', 'The Problem', 'Implementation of AI', 'Our Solution',
+                'How Does Our Prototype Work?', 'Hardware and Software Used', 'Our Team'
+            ],
+            css3: false
+        });
+
+        // LOADER
+
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("load").style.transform = "translateY(-200vh)";
+        }
+
+        // DARK MODE
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+        // SAVE PREFERENCE TO LOCAL STORAGE
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        // CHECK LOCAL STORAGE FOR PREFERENCE
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
