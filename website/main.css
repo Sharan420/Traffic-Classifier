@@ -135,6 +135,7 @@ a:hover {
     height: 250px;
     width: 250px;
     animation: scale 1.5s linear infinite;
+    filter: var(--invert);
 }
 
 .loader-wheel:after {
