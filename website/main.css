@@ -126,11 +126,15 @@ a:hover {
 }
 
 .loader-wheel {
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
     position: relative;
-    height: 200px;
-    width: 200px;
+    background-image: url(lib/logo-only.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 250px;
+    animation: scale 1.5s linear infinite;
 }
 
 .loader-wheel:after {
@@ -450,5 +454,53 @@ img[src="lib/logo.png"]{
 
     100% {
         transform: rotate(360deg)
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@-o-keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
     }
 }
