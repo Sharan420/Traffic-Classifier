@@ -149,6 +149,7 @@ a:hover {
     right: 5px;
     bottom: 5px;
     animation: spin 1.5s linear infinite;
+    filter: var(--invert);
 }
 
 .loader-wheel::before {
@@ -162,6 +163,7 @@ a:hover {
     left: 15px;
     right: 15px;
     bottom: 15px;
+    filter: var(--invert);
 }
 
 /* DARK MODE SWITCH */
