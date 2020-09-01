@@ -128,7 +128,7 @@ a:hover {
 .loader-wheel {
     display: block;
     position: relative;
-    background-image: url(lib/logo-only.png);
+    background-image: url(lib/logo.svg);
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
