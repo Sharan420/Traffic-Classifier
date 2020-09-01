@@ -129,7 +129,7 @@ a:hover {
     display: block;
     position: relative;
     background-image: url(lib/logo.svg);
-    background-size: 50%;
+    background-size: 30%;
     background-position: center;
     background-repeat: no-repeat;
     height: 250px;
