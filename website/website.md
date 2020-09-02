@@ -25,6 +25,10 @@ The website has 2 different modes. The theme of the website changes according to
 
 The website uses fullpage.js to provide a more user friendly and aesthetic interface with an easy to navigate experience
 
+#### Flowchart
+
+The website has a Flowchart to provide users with an easy way to understand how the product works
+
 #### Infomercial - 
 
 This section featured the Infomercial made by our team. Please note that the the video was made totally inhouse and nothing was out sourced.
