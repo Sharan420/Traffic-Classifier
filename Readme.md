@@ -1,5 +1,7 @@
 # Traffic Classifier: Server Branch
-Branch with server components.Please also take some time to go through our PPT
+Branch with server components. Please also take some time to go through our PPT
+<br />
+Our Website is available at https://namanchandok.co/Traffic-Classifier/website
 
 ## Installing Dependencies
 
@@ -54,7 +56,9 @@ python Traffic.py
 #python3
 python3 Traffic.py
 ```
-## Authors
+## Team Members
 
-Aditya Kabu 
-Sharan Suri
+Aditya Kabu, 
+Sharan Suri, 
+Naman Chandok,
+Shaivi Shewaramani
