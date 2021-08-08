@@ -1,7 +1,7 @@
 # Traffic Classifier: Server Branch
 Branch with server components. Please also take some time to go through our PPT
 <br />
-Our Website is available at https://namanchandok.co/Traffic-Classifier/website
+Our Website is available at https://namanchandok.github.io/Traffic-Classifier/website
 
 ## Installing Dependencies
 
